@@ -453,3 +453,5 @@ MigrationBackup/
 build/
 
 # End of https://www.gitignore.io/api/c,c++,cmake,csharp,visualstudio,visualstudiocode
+
+runner
