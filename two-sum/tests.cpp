@@ -46,13 +46,13 @@ auto values = ::testing::Values(
                 std::make_tuple<std::vector<int>, int, std::pair<int, int>>({3,3}, 6, std::make_pair(0,1))
                 );
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
         TwoSumTest1,
         TwoSumTestFast,
         values
         );
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
         TwoSumTest2,
         TwoSumTestNoStorage,
         values

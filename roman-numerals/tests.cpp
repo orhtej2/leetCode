@@ -46,7 +46,7 @@ auto values = ::testing::Values(
                 std::make_pair("MCMXCIX", 1999)
                 );
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
         RomanNumeralsTests,
         RomanNumeralsTest,
         values

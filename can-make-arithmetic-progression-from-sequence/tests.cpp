@@ -19,7 +19,7 @@ TEST_P(ArithmeticProgressionTest, CheckSolution) {
     EXPECT_EQ(expected, actual);
 }
 
-INSTANTIATE_TEST_CASE_P(
+INSTANTIATE_TEST_SUITE_P(
         ArithmeticProgressionTests,
         ArithmeticProgressionTest,
         ::testing::Values(
