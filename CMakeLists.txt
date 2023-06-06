@@ -28,6 +28,7 @@ include(CTest)
 enable_testing()
 include(GoogleTest)
 
+add_subdirectory( can-make-arithmetic-progression-from-sequence )
 add_subdirectory( contains-duplicate )
 add_subdirectory( roman-numerals )
 add_subdirectory( longest-substring-without-repeating-characters )
