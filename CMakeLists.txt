@@ -28,6 +28,7 @@ include(CTest)
 enable_testing()
 include(GoogleTest)
 
+add_subdirectory( add-two-numbers )
 add_subdirectory( can-make-arithmetic-progression-from-sequence )
 add_subdirectory( contains-duplicate )
 add_subdirectory( roman-numerals )
