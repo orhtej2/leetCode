@@ -7,11 +7,12 @@ class SolutionFast {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
         std::unordered_map<int, int> pairs;
-        for (int i = 0; i < nums.size(); ++i) {
+        for (std::vector<int>::size_type i = 0; i < nums.size(); ++i) {
             auto it = pairs.find(target-nums[i]);
             if (it != pairs.end())
             {
-                return { i, it->second };
+                // TODO don't use static_cast<> to avoid UB.
+                return { static_cast<int>(i), it->second };
             }
             pairs[nums[i]] = i;
         }

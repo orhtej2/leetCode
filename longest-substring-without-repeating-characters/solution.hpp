@@ -11,8 +11,8 @@ public:
     {
         std::unordered_map<char, size_t> last;
         int result = 0;
-        int start_idx = 0;
-        for (int i = 0; i < s.length(); ++i)
+        std::string::size_type start_idx = 0;
+        for (std::string::size_type i = 0; i < s.length(); ++i)
         {
             const auto previous = last.find(s[i]);
             if (previous != last.end())
