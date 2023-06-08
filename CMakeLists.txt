@@ -35,13 +35,3 @@ add_subdirectory( roman-numerals )
 add_subdirectory( longest-substring-without-repeating-characters )
 add_subdirectory( top-k-frequent-elements )
 add_subdirectory( two-sum )
-
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
-if(CMAKE_CXX_COMPILER_ID)
-    include(CodeCoverage)
-    append_coverage_compiler_flags()
-    setup_target_for_coverage_lcov(
-      NAME ${PROJECT_NAME}_coverage
-      EXECUTABLE ctest -j
-      ${PROJECT_TEST_NAME})
-endif()
