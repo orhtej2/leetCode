@@ -10,14 +10,14 @@ public:
     int lengthOfLongestSubstring(const std::string& s) 
     {
         std::unordered_map<char, size_t> last;
-        int result = 0;
-        std::string::size_type start_idx = 0;
-        for (std::string::size_type i = 0; i < s.length(); ++i)
+        size_t result = 0;
+        size_t start_idx = 0;
+        for (size_t i = 0; i < s.length(); ++i)
         {
             const auto previous = last.find(s[i]);
             if (previous != last.end())
             {
-                const int candidate = i - start_idx;
+                const auto candidate = i - start_idx;
                 start_idx = previous->second + 1;
                 if (candidate > result)
                     result = candidate;
@@ -33,7 +33,7 @@ public:
             last[s[i]] = i;
         }
 
-        const int candidate = s.length() - start_idx;
+        const auto candidate = s.length() - start_idx;
         if (candidate > result)
             result = candidate;
 

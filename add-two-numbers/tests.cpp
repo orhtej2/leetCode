@@ -17,22 +17,18 @@ TEST_P(AddTwoNumbersTest, CheckSolution) {
     const ll right = std::get<1>(GetParam());
     const ll expected = std::get<2>(GetParam());
 
-    ListNode* input1 = vector_to_list(left);
-    ListNode* input2 = vector_to_list(right);
+    auto input1 = vector_to_list(left);
+    auto input2 = vector_to_list(right);
 
-    ListNode* actual = solution.addTwoNumbers(input1, input2);
-    delete_list(input1);
-    delete_list(input2);
+    auto actual = solution.addTwoNumbers(input1.get(), input2.get());
 
-    ListNode* it = actual;
+    ListNode* it = actual.get();
     for (auto i = expected.crbegin(); i != expected.crend(); ++i)
     {
         EXPECT_NE(nullptr, it);
         EXPECT_EQ(*i, it->val);
-        it = it->next;
+        it = it->next.get();
     }
-
-    delete_list(actual);
 }
 
 INSTANTIATE_TEST_SUITE_P(
