@@ -3,11 +3,12 @@
 #include <ostream>
 #include <vector>
 
-std::ostream& operator<<(std::ostream& os, const std::vector<int>& vector) 
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::vector<T>& vector)
 {
     os << "[";
     bool first = true;
-    for (const int i : vector)
+    for (const auto& i : vector)
     {
         if (!first)
             os<<",";
