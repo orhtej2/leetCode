@@ -24,9 +24,9 @@ public:
                     candidate = candidate == -1 ? bigger : std::min(bigger, candidate);
                 }
                 if (candidate == -1 || root->left->val <= candidate)
-                    q.push(root->left);
+                    q.push(root->left.get());
                 if (candidate == -1 || root->right->val <= candidate)
-                    q.push(root->right);
+                    q.push(root->right.get());
             }
         }
 

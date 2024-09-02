@@ -16,7 +16,7 @@ public:
             while (root != nullptr)
             {
                 q.push(root);
-                root = root->left;
+                root = root->left.get();
             }
             if (q.empty())
             {
@@ -27,7 +27,7 @@ public:
             visited++;
             if (visited == k)
                 return root->val;
-            root = root->right;
+            root = root->right.get();
         }
     }
 };

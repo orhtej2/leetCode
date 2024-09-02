@@ -19,11 +19,9 @@ TEST_P(KthSmallestBstTestNoRecursion, CheckSolution) {
     std::vector<int> input = std::get<0>(GetParam());
     int expected = std::get<1>(GetParam());
 
-    TreeNode* tn = make_tree(input);
+    auto tn = make_tree(input);
 
-    int actual = solution.findSecondMinimumValue(tn);
-
-    delete_tree(tn);
+    int actual = solution.findSecondMinimumValue(tn.get());
 
     EXPECT_EQ(expected, actual);
 }
@@ -32,11 +30,9 @@ TEST_P(KthSmallestBstTestRecursive, CheckSolution) {
     std::vector<int> input = std::get<0>(GetParam());
     int expected = std::get<1>(GetParam());
 
-    TreeNode* tn = make_tree(input);
+    auto tn = make_tree(input);
 
-    int actual = solution.findSecondMinimumValue(tn);
-
-    delete_tree(tn);
+    int actual = solution.findSecondMinimumValue(tn.get());
 
     EXPECT_EQ(expected, actual);
 }

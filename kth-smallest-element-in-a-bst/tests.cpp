@@ -15,11 +15,9 @@ TEST_P(KthSmallestBstTest, CheckSolution) {
     int k = std::get<1>(GetParam());
     int expected = std::get<2>(GetParam());
 
-    TreeNode* tn = make_tree(input);
+    auto tn = make_tree(input);
 
-    int actual = solution.kthSmallest(tn, k);
-
-    delete_tree(tn);
+    int actual = solution.kthSmallest(tn.get(), k);
 
     EXPECT_EQ(expected, actual);
 }

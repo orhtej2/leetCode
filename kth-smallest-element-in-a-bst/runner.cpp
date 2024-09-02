@@ -6,12 +6,10 @@
 int main()
 {
     std::vector<int> input = {2,1,3,0,0,0,5};
-    TreeNode* tn = make_tree(input);
+    auto tn = make_tree(input);
     Solution s;
 
-    std::cout << tn << std::endl << std::endl << s.kthSmallest(tn, 4) << std::endl;
-
-    delete_tree(tn);
+    std::cout << tn << std::endl << std::endl << s.kthSmallest(tn.get(), 4) << std::endl;
 
     return 0;
 }

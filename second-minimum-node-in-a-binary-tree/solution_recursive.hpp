@@ -13,8 +13,8 @@ public:
         if (root->left->val != root->right->val)
             candidate = std::max(root->left->val, root->right->val);
         
-        int left = findSecondMinimumValue(root->left);
-        int right = findSecondMinimumValue(root->right);
+        int left = findSecondMinimumValue(root->left.get());
+        int right = findSecondMinimumValue(root->right.get());
 
         if (left != -1)
             candidate = candidate != -1 ? std::min(left, candidate) : left;
