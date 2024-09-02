@@ -1,23 +1,10 @@
 #include <vector>
 #include <iostream>
 
+#include "print_vector.hpp"
+
 #include "solution1.hpp"
 #include "solution2.hpp"
-
-void print(const std::vector<int>&v)
-{
-    std::cout << "[";
-    bool first = true;
-    for (const int i : v)
-    {
-        if (!first)
-            std::cout<<",";
-        std::cout<<i;
-        first = false;
-    }
-
-    std::cout << "]" << std::endl;
-}
 
 int main()
 {
@@ -25,10 +12,10 @@ int main()
     SolutionNoStorage s2;
 
     std::vector<int> input = {0, 1, 5, 7};
-    print(input);
+    std::cout << input << std::endl;
 
-    print(s1.twoSum(input, 12));
-    print(s2.twoSum(input, 12));
+    std::cout << s1.twoSum(input, 12) << std::endl;
+    std::cout << s2.twoSum(input, 12) << std::endl;
 
     return 0;
 }

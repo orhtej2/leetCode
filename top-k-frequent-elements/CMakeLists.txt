@@ -14,4 +14,10 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+target_link_libraries(
+  frequency_runner
+  utils
+)
+
+
 gtest_discover_tests(frequency_tests)

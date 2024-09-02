@@ -14,4 +14,9 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+target_link_libraries(
+  two_sum_runner
+  utils
+)
+
 gtest_discover_tests(two_sum_tests)
