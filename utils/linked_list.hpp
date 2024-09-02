@@ -49,7 +49,7 @@ std::unique_ptr<ListNode> vector_to_list(const std::vector<int> input)
     return result;
 }
 
-std::ostream& operator<<(std::ostream& os, const std::unique_ptr<ListNode> input)
+std::ostream& operator<<(std::ostream& os, const std::unique_ptr<ListNode>& input)
 {
     os << '[';
     bool first = true;
