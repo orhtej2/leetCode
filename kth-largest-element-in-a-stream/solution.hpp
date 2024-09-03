@@ -2,12 +2,12 @@
 
 #include <cassert>
 
-#include <iterator>
+#include <algorithm>
 #include <vector>
-#include <set>
+#include <queue>
 
 class KthLargest {
-  std::multiset<int, std::greater<int>> scores;
+  std::priority_queue<int, std::vector<int>, std::greater<int>> scores;
   const int k;
 public:
   KthLargest(int k, const std::vector<int>& nums) : k(k) {
@@ -18,16 +18,10 @@ public:
   }
 
   int add(int val) {
-    if (scores.size() < static_cast<size_t>(k)) {
-      scores.insert(val);
-    }
-    else {
-      auto it = scores.lower_bound(val);
-      if (it != scores.end()) {
-        scores.insert(val);
-        scores.erase(std::prev(scores.end()));
-      }
-    }
-    return *(scores.rbegin());
+    scores.push(val);
+    if (scores.size() > static_cast<size_t>(k))
+      scores.pop();
+
+    return scores.top();
   }
 };
