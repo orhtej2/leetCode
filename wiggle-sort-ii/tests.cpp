@@ -1,10 +1,10 @@
-#include <gtest/gtest.h>
-
 #include <algorithm>
 #include <utility>
 #include <vector>
 
 #include "print_vector.hpp"
+
+#include <gtest/gtest.h>
 
 #include "solution.hpp"
 
