@@ -44,10 +44,10 @@ INSTANTIATE_TEST_SUITE_P(
   KthLargestInArrayTests,
   KthLargestInArrayTest,
   ::testing::Values(
-    std::tuple<ll>({ 1, 2, 3 }),
-    std::tuple<ll>({ 3, 1 }),
-    std::tuple<ll>({ 1 }),
-    std::tuple<ll>({ 1, 5, 1, 1, 6, 4 }),
-    std::tuple<ll>({ 1, 3, 2, 2, 3, 1 })
+    std::make_tuple<ll>({ 1, 2, 3 }),
+    std::make_tuple<ll>({ 3, 1 }),
+    std::make_tuple<ll>({ 1 }),
+    std::make_tuple<ll>({ 1, 5, 1, 1, 6, 4 }),
+    std::make_tuple<ll>({ 1, 3, 2, 2, 3, 1 })
   )
 );
