@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <random>
 #include <utility>
 #include <vector>
 
@@ -31,9 +32,11 @@ TEST_P(KthLargestInArrayTest, CheckSolution) {
   solution.wiggleSort(input);
 
   check(input);
+  std::random_device rd;
+  std::mt19937 g(rd());
 
   for (int i = 0; i < 20; ++i) {
-    std::random_shuffle(input.begin(), input.end());
+    std::shuffle(input.begin(), input.end(), g);
     solution.wiggleSort(input);
 
     check(input);
